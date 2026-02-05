@@ -23,7 +23,9 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 │   ├── routes.js        # Definisi route API
 │   ├── books.js         # Data buku (in-memory storage)
 │   └── server.js        # Entry point server Hapi
+├── eslint.config.js
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
