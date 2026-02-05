@@ -1,7 +1,7 @@
-# 📚 Bookshelf API Backend
+# 📚 Bookshelf API Backend (Express.js)
 
 Bookshelf API Backend adalah proyek **RESTful API** sederhana untuk mengelola koleksi buku.  
-API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsitektur modular agar mudah dikembangkan.
+API ini dibangun menggunakan **Node.js** dan framework **Express.js**, dengan struktur modular agar mudah dikembangkan dan dipelihara.
 
 ---
 
@@ -19,11 +19,15 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 ```
 .
 ├── src
-│   ├── handler.js       # Handler fungsi untuk setiap endpoint
-│   ├── routes.js        # Definisi route API
 │   ├── books.js         # Data dummy (in-memory storage)
-│   └── server.js        # Entry point server Hapi
+│   ├── controller.js    # Logic handler untuk setiap endpoint
+│   ├── routes.js        # Definisi route API
+│   └── server.js        # Entry point server Express
+├── .env
+├── .gitignore
+├── eslint.config.js
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
@@ -32,8 +36,8 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 ## ⚡ Instalasi & Menjalankan
 1. Clone repository:
    ```bash
-   git clone https://github.com/mwhehe30/bookshelf-api-backend.git
-   cd bookshelf-api-backend
+   git clone https://github.com/mwhehe30/bookshelf-api.git
+   cd bookshelf-api
    ```
 
 2. Install dependencies:
@@ -45,7 +49,7 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
    ```bash
    npm run start
    ```
-   atau mode development dengan nodemon:
+   atau mode development:
    ```bash
    npm run dev
    ```
@@ -79,24 +83,24 @@ Request Body:
 **GET** `/books`
 
 ### 3. Lihat Buku by ID
-**GET** `/books/{bookId}`
+**GET** `/books/:bookId`
 
 ### 4. Update Buku by ID
-**PUT** `/books/{bookId}`
+**PUT** `/books/:bookId`
 
 ### 5. Hapus Buku by ID
-**DELETE** `/books/{bookId}`
+**DELETE** `/books/:bookId`
 
 ---
 
 ## 🛠 Tools yang Digunakan
-- [Node.js](https://nodejs.org/)
-- [Hapi.js](https://hapi.dev/)
-- [Nodemon](https://nodemon.io/) (opsional, untuk development)
+- Node.js
+- Express.js
+- Nodemon
+- ESLint
 
 ---
 
 ## 📌 Catatan
 - Data masih disimpan secara **in-memory** (array JavaScript), sehingga akan hilang setelah server dimatikan.  
-- Untuk tahap berikutnya bisa diintegrasikan dengan database (PostgreSQL / MongoDB / MySQL).
-
+- Branch lain pada repository ini menggunakan framework **Hapi.js**.
