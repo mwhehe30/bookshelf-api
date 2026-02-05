@@ -1,4 +1,4 @@
-# 📚 Bookshelf API Backend
+# 📚 Bookshelf API Backend (Hapi.js)
 
 Bookshelf API Backend adalah proyek **RESTful API** sederhana untuk mengelola koleksi buku.  
 API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsitektur modular agar mudah dikembangkan.
@@ -21,7 +21,7 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 ├── src
 │   ├── handler.js       # Handler fungsi untuk setiap endpoint
 │   ├── routes.js        # Definisi route API
-│   ├── books.js         # Data dummy (in-memory storage)
+│   ├── books.js         # Data buku (in-memory storage)
 │   └── server.js        # Entry point server Hapi
 ├── package.json
 └── README.md
@@ -32,8 +32,9 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 ## ⚡ Instalasi & Menjalankan
 1. Clone repository:
    ```bash
-   git clone https://github.com/mwhehe30/bookshelf-api-backend.git
-   cd bookshelf-api-backend
+   git clone https://github.com/mwhehe30/bookshelf-api.git
+   cd bookshelf-api
+   git checkout hapi
    ```
 
 2. Install dependencies:
@@ -44,10 +45,6 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 3. Jalankan server:
    ```bash
    npm run start
-   ```
-   atau mode development dengan nodemon:
-   ```bash
-   npm run dev
    ```
 
 4. Server akan berjalan di:
@@ -60,7 +57,8 @@ API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsit
 ## 🔗 Endpoint API
 
 ### 1. Tambah Buku
-**POST** `/books`  
+**POST** `/books`
+
 Request Body:
 ```json
 {
@@ -92,12 +90,10 @@ Request Body:
 ## 🛠 Tools yang Digunakan
 - [Node.js](https://nodejs.org/)
 - [Hapi.js](https://hapi.dev/)
-- [Nodemon](https://nodemon.io/) (opsional, untuk development)
+- [Nodemon](https://nodemon.io/)
 
 ---
 
 ## 📌 Catatan
-- Data masih disimpan secara **in-memory** (array JavaScript), sehingga akan hilang setelah server dimatikan.  
-- Untuk tahap berikutnya bisa diintegrasikan dengan database (PostgreSQL / MongoDB / MySQL).
-
-
+- Data disimpan secara **in-memory**, sehingga akan hilang saat server dimatikan.
+- Proyek ini dibuat sebagai latihan backend dan submission API.
