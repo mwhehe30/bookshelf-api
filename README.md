@@ -24,7 +24,6 @@ API ini dibangun menggunakan **Node.js** dan framework **Express.js**, dengan st
 │   ├── routes.js        # Definisi route API
 │   └── server.js        # Entry point server Express
 ├── .env
-├── .gitignore
 ├── eslint.config.js
 ├── package.json
 ├── package-lock.json
