@@ -1,111 +1,102 @@
-# 📚 Bookshelf API Backend — Express.js
+# 📚 Bookshelf API Backend
 
-RESTful API sederhana untuk mengelola koleksi buku.  
-Project ini dibuat menggunakan **Node.js** dan **Express.js** dengan struktur modular.
-
----
-
-## 🚀 Fitur
-- Tambah buku
-- Ambil semua buku
-- Ambil buku berdasarkan ID
-- Update buku
-- Hapus buku
-- Validasi input
+Bookshelf API Backend adalah proyek **RESTful API** sederhana untuk mengelola koleksi buku.  
+API ini dibangun menggunakan **Node.js** dan framework **Hapi.js**, dengan arsitektur modular agar mudah dikembangkan.
 
 ---
 
-## 📂 Struktur Folder
+## 🚀 Fitur Utama
+- Menambahkan buku baru
+- Menampilkan semua buku
+- Mencari buku berdasarkan **ID**
+- Mengupdate detail buku
+- Menghapus buku
+- Validasi input agar data lebih konsisten
+
+---
+
+## 📂 Struktur Proyek
 ```
 .
 ├── src
-│   ├── books.js          # In-memory data buku
-│   ├── controller.js     # Logic handler
-│   ├── routes.js         # Routing Express
-│   └── server.js         # Entry point server
-├── .env
-├── .gitignore
-├── eslint.config.js
+│   ├── handler.js       # Handler fungsi untuk setiap endpoint
+│   ├── routes.js        # Definisi route API
+│   ├── books.js         # Data dummy (in-memory storage)
+│   └── server.js        # Entry point server Hapi
 ├── package.json
-└── package-lock.json
+└── README.md
 ```
 
 ---
 
-## ⚙️ Instalasi
-```bash
-git clone https://github.com/mwhehe30/bookshelf-api.git
-cd bookshelf-api
-npm install
-```
+## ⚡ Instalasi & Menjalankan
+1. Clone repository:
+   ```bash
+   git clone https://github.com/mwhehe30/bookshelf-api-backend.git
+   cd bookshelf-api-backend
+   ```
 
----
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## ▶️ Menjalankan Server
-```bash
-npm run start
-```
+3. Jalankan server:
+   ```bash
+   npm run start
+   ```
+   atau mode development dengan nodemon:
+   ```bash
+   npm run dev
+   ```
 
-Atau mode development:
-```bash
-npm run dev
-```
-
-Server berjalan di:
-```
-http://localhost:9000
-```
+4. Server akan berjalan di:
+   ```
+   http://localhost:9000
+   ```
 
 ---
 
 ## 🔗 Endpoint API
 
-### ➕ Tambah Buku
-**POST** `/books`
-
+### 1. Tambah Buku
+**POST** `/books`  
+Request Body:
 ```json
 {
   "name": "Clean Code",
   "year": 2008,
   "author": "Robert C. Martin",
-  "summary": "Panduan menulis kode yang bersih",
+  "summary": "Panduan menulis kode yang bersih.",
   "publisher": "Prentice Hall",
   "pageCount": 464,
-  "readPage": 100,
+  "readPage": 30,
   "reading": true
 }
 ```
 
----
-
-### 📖 Ambil Semua Buku
+### 2. Lihat Semua Buku
 **GET** `/books`
 
----
+### 3. Lihat Buku by ID
+**GET** `/books/{bookId}`
 
-### 🔍 Ambil Buku by ID
-**GET** `/books/:bookId`
+### 4. Update Buku by ID
+**PUT** `/books/{bookId}`
 
----
-
-### ✏️ Update Buku
-**PUT** `/books/:bookId`
-
----
-
-### 🗑 Hapus Buku
-**DELETE** `/books/:bookId`
+### 5. Hapus Buku by ID
+**DELETE** `/books/{bookId}`
 
 ---
 
-## 🛠 Tech Stack
-- Node.js
-- Express.js
-- ESLint
+## 🛠 Tools yang Digunakan
+- [Node.js](https://nodejs.org/)
+- [Hapi.js](https://hapi.dev/)
+- [Nodemon](https://nodemon.io/) (opsional, untuk development)
 
 ---
 
 ## 📌 Catatan
-- Data disimpan **in-memory**
-- Data akan hilang saat server restart
-- Cocok untuk latihan REST API / submission Dicoding
+- Data masih disimpan secara **in-memory** (array JavaScript), sehingga akan hilang setelah server dimatikan.  
+- Untuk tahap berikutnya bisa diintegrasikan dengan database (PostgreSQL / MongoDB / MySQL).
+
